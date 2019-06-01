@@ -1,13 +1,13 @@
 [general]
 use-default-font=true
-window-vertical-displacement=20
+window-vertical-displacement=15
 use-scrollbar=true
 use-popup=true
 start-fullscreen=false
 set-window-title=false
 compat-delete='delete-sequence'
 abbreviate-tab-names=true
-window-height=97
+window-height=95
 gtk-theme-name='Adwaita-dark'
 quick-open-command-line='gedit %(file_path)s'
 gtk-prefer-dark-theme=false
@@ -57,7 +57,7 @@ show-hide='<Primary>grave'
 cursor-shape=0
 
 [style/background]
-transparency=67
+transparency=97
 
 [style/font]
 allow-bold=true
