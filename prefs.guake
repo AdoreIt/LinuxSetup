@@ -57,7 +57,7 @@ show-hide='<Primary>grave'
 cursor-shape=0
 
 [style/background]
-transparency=97
+transparency=71
 
 [style/font]
 allow-bold=true
