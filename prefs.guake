@@ -2,33 +2,37 @@
 use-default-font=true
 window-vertical-displacement=15
 use-scrollbar=true
+quick-open-in-current-terminal=false
 use-popup=true
 start-fullscreen=false
+fullscreen-hide-tabbar=false
 set-window-title=false
 compat-delete='delete-sequence'
 abbreviate-tab-names=true
 window-height=95
-gtk-theme-name='Adwaita-dark'
-quick-open-command-line='gedit %(file_path)s'
+gtk-theme-name='Arc-Darker'
+quick-open-command-line='code -g %(file_path)s:%(line_number)s'
 gtk-prefer-dark-theme=false
 use-login-shell=false
 window-valignment=1
+infinite-history=true
 display-n=0
-quick-open-enable=false
+quick-open-enable=true
 save-tabs-when-changed=true
 use-trayicon=true
 mouse-display=true
-window-losefocus=false
-history-size=1000
+use-audible-bell=false
+window-halignment=0
 prompt-on-quit=true
+history-size=1000
 tab-ontop=true
 start-at-login=true
+window-losefocus=false
 scroll-keystroke=true
-window-halignment=0
 window-width=98
 open-tab-cwd=true
-window-tabbar=true
 window-refocus=false
+window-tabbar=true
 restore-tabs-startup=true
 restore-tabs-notify=true
 max-tab-name-length=100
@@ -57,7 +61,7 @@ show-hide='<Primary>grave'
 cursor-shape=0
 
 [style/background]
-transparency=71
+transparency=77
 
 [style/font]
 allow-bold=true
