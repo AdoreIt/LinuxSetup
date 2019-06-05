@@ -33,3 +33,5 @@ Install arc icons
 cd .. && ./autogen.sh --prefix=/usr
 sudo make install
 ```
+
+**Final step:** change icons theme in Tweeks
