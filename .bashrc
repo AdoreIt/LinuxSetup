@@ -1,0 +1,2 @@
+# Infinite history
+HISTSIZE= HISTFILESIZE=

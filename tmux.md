@@ -3,9 +3,13 @@
 ## Install
 
 ``` bash
-sudo apt-get install tmux
+sudo apt install tmux
 ```
 
 ## Load settings
 
 Just copy and paste to home file `.tmux.conf`
+
+``` bash
+cp .tmux.conf $HOME/.tmux.conf
+```

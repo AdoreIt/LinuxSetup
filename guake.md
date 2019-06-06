@@ -35,3 +35,10 @@ make reinstall  # (do not sudo it!)
 guake --save-preferences prefs.guake
 guake --restore-preferences prefs.guake
 ```
+
+## Add open in Guake
+
+``` bash
+cp guake_open_dir.sh $HOME/.local/share/nautilus/scripts/guake_open_dir.sh
+chmod +x $HOME/.local/share/nautilus/scripts/guake_open_dir.sh
+```
