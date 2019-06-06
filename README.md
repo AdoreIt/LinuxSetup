@@ -1,6 +1,7 @@
 # Ubuntu Setup
 
 - [How to](how_to.md)
+- [Installation checklist](installation_checklist.md)
 - [Guake](guake.md)
 - [Tmux](tmux.md)
 - [Arc Gtk theme](arc_gtk_theme.md)
