@@ -21,6 +21,7 @@ Clone arc icons theme
 git clone https://github.com/horst3180/arc-icon-theme --depth 1
 cd arc-icon-theme/Arc/ && vim index.theme
 ```
+
 Change Moka to Paper
 
 ```text
