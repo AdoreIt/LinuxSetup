@@ -1,10 +1,10 @@
 # Ubuntu Setup
 
-- [How to](how_to.md)
-- [Installation checklist](installation_checklist.md)
-- [Installation commands](installation_commands.md)
-- [Guake](guake.md)
-- [Tmux](tmux.md)
-- [Arc Gtk theme](arc_gtk_theme.md)
-- [Input case ignore](input_case_ignore.md)
-- [VS Code](vscode.md)
+- [How to](readmes/how_to.md)
+- [Installation checklist](readmes/installation_checklist.md)
+- [Installation commands](readmes/installation_commands.md)
+- [Guake](readmes/guake.md)
+- [Tmux](readmes/tmux.md)
+- [Arc Gtk theme](readmes/arc_gtk_theme.md)
+- [Input case ignore](readmes/input_case_ignore.md)
+- [VS Code](readmes/vscode.md)

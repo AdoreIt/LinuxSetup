@@ -3,5 +3,5 @@
 Copy and paste to home `.inputrc` file or
 
 ```bash
-cp .inputrc $HOME/.inputrc
+cp $HOME/AdoreIt/UbuntuSetup/configs/.inputrc $HOME/.inputrc
 ```

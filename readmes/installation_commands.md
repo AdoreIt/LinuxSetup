@@ -80,18 +80,18 @@ sudo apt install -y cmake
 conda config --set auto_activate_base False
 
 # gt creator
-cp $HOME/AdoreIt/UbuntuSetup/creator-dark_pink_types.xml /
+cp $HOME/AdoreIt/UbuntuSetup/configs/creator-dark_pink_types.xml /
 $HOME/.config/QtProject/qtcreator/styles/creator-dark_pink_types.xml
 
 #vs code
-cp $HOME/AdoreIt/UbuntuSetup/settings.json $HOME/.config/Code/User/settings.json
+cp $HOME/AdoreIt/UbuntuSetup/configs/settings.json $HOME/.config/Code/User/settings.json
 
 # vim-gtk
 sudo apt install vim-gtk
 
 # tmux
 sudo apt install tmux
-cp $HOME/AdoreIt/UbuntuSetup/.tmux.conf $HOME/.tmux.conf
+cp $HOME/AdoreIt/UbuntuSetup/configs/.tmux.conf $HOME/.tmux.conf
 ```
 
 ## Utils
@@ -124,7 +124,7 @@ sudo npm install gtop -g
 
 ```bash
 # .inputrc
-cp $HOME/AdoreIt/UbuntuSetup/.inputrc $HOME/.inputrc
+cp $HOME/AdoreIt/UbuntuSetup/configs/.inputrc $HOME/.inputrc
 
 # generate ssh-keygen github
 ssh-keygen -t rsa -b 4096 -C "adress@mail"

@@ -39,6 +39,8 @@ guake --restore-preferences prefs.guake
 ## Add open in Guake
 
 ``` bash
-cp guake_open_dir.sh $HOME/.local/share/nautilus/scripts/guake_open_dir.sh
+cp $HOME/AdoreIt/UbuntuSetup/scripts/guake_open_dir.sh \
+$HOME/.local/share/nautilus/scripts/guake_open_dir.sh
+
 chmod +x $HOME/.local/share/nautilus/scripts/guake_open_dir.sh
 ```
