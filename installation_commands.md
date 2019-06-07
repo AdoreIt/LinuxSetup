@@ -15,7 +15,8 @@ sudo apt install flameshot
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot ''
 # Go to Settings -> Devices -> Keyboard and scroll to the end.
 # Press + and you will create custom shortcut. Enter name: "flameshot", command:
-/usr/bin/flameshot gui.
+/usr/bin/flameshot gui
+# Set in Flameshot settings to launch on system start
 
 # Peek
 sudo add-apt-repository ppa:peek-developers/stable && \
@@ -125,11 +126,17 @@ sudo npm install gtop -g
 # .inputrc
 cp $HOME/AdoreIt/UbuntuSetup/.inputrc $HOME/.inputrc
 
-# generate ssh-keygen
+# generate ssh-keygen github
 ssh-keygen -t rsa -b 4096 -C "adress@mail"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
-# copy and paste to git site
+# copy and paste .pub to git site
+
+# generate ssh-keygen bitbucket
+ssh-keygen
+ssh-add /home/natalie/.ssh/id_rsa_bitbucket
+cat ~/.ssh/id_rsa_bitbucket.pub
+# copy and paste .pub to bitbucket site
 
 # In Templates: New File
 touch $HOME/Templates/"New File"
