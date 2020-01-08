@@ -1,0 +1,112 @@
+
+
+#define Color_Foreground    #F8F8F2
+#define Color_Background    #282A36
+#define Color_Black         #282A36
+#define Color_BrightBlack   #44475A
+#define Color_Red           #FF5555
+#define Color_BrightRed     #FF5555
+#define Color_Green         #50FA7B
+#define Color_BrightGreen   #50FA7B
+#define Color_Yellow        #F1FA8C
+#define Color_BrightYellow  #F1FA8C
+#define Color_Blue          #BD93F9
+#define Color_BrightBlue    #BD93F9
+#define Color_Magenta       #FF79C6
+#define Color_BrightMagenta #FF79C6
+#define Color_Cyan          #8BE9FD
+#define Color_BrightCyan    #8BE9FD
+#define Color_White         #BBBBBB
+#define Color_BrightWhite   #FFFFFF
+
+!! Colors
+
+*.foreground: Color_Foreground
+*.background: Color_Background
+*.color0:     Color_Black
+*.color8:     Color_BrightBlack
+*.color1:     Color_Red
+*.color9:     Color_BrightRed
+*.color2:     Color_Green
+*.color10:    Color_BrightGreen
+*.color3:     Color_Yellow
+*.color11:    Color_BrightYellow
+*.color4:     Color_Blue
+*.color12:    Color_BrightBlue
+*.color5:     Color_Magenta
+*.color13:    Color_BrightMagenta
+*.color6:     Color_Cyan
+*.color14:    Color_BrightCyan
+*.color7:     Color_White
+*.color15:    Color_BrightWhite
+
+!! Common
+
+#define FONT SauceCodePro Nerd Font:size=10:antialias=true:autohint=true
+
+!! URxvt.letterSpace: -1
+
+!! st
+
+! Transparency
+st.alpha: 0.8
+
+! Font
+st.font: FONT
+
+!! URxvt
+
+! Background transparency
+URxvt.background: [90]Color_Background
+
+! Font
+URxvt.font: xft:FONT
+
+! Disable scrollbar
+URxvt.scrollBar: false
+
+! Bit depth
+URxvt.depth: 32
+
+! Hide cursor on keypress
+URxvt.pointerBlank: true
+
+! Underline color
+URxvt.colorUL: #4682B4
+
+! Do not scroll with output
+URxvt.scrollTtyOutput: false
+
+! Scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt.scrollWithBuffer: true
+
+! Scroll back to the bottom on keypress
+URxvt.scrollTtyKeypress: true
+
+! Disable the scrollback buffer for the secondary screen
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+
+! Scrolling with Meta-j/k
+URxvt.keysym.M-k: command:\033]720;5\007
+URxvt.keysym.M-j: command:\033]721;5\007
+
+! Arrow keys
+URxvt.keysym.C-Up: \033[1;5A
+URxvt.keysym.C-Down: \033[1;5B
+URxvt.keysym.C-Left: \033[1;5D
+URxvt.keysym.C-Right: \033[1;5C
+
+! Extensions
+URxvt.perl-ext-common: default,resize-font,keyboard-select,url-select,selection-to-clipboard
+
+! keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keyboard-select.clipboard: true
+
+! url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: xdg-open
+URxvt.url-select.underline: true
+URxvt.url-select.button: 1
