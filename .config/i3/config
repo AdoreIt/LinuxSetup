@@ -124,16 +124,16 @@ exec_always --no-startup-id ~/.config/polybar/launch
 ################################################################################
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+d exec --no-startup-id dmenu_run
+#bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-#bindsym $mod+d exec --no-startup-id rofi -show drun
-#bindsym $mod+Shift+d exec --no-startup-id rofi -show run
-#bindsym $mod+a exec --no-startup-id rofi -show window
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
+bindsym $mod+a exec --no-startup-id rofi -show window
 
 ################################################################################
 # Basic bindings
@@ -239,6 +239,22 @@ assign [class="Slack"] $ws10
 assign [class="Skype"] $ws10
 
 ################################################################################
+# Window options
+################################################################################
+
+#for_window [class="TelegramDesktop"] floating enable
+#for_window [class="TelegramDesktop" title="Media viewer"] fullscreen enable
+#for_window [class="Nautilus"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Arandr"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="feh"] floating enable
+for_window [class="mpv"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="app.py"] floating enable
+for_window [class="matplotlib"] floating enable
+
+################################################################################
 # Window bindings
 ################################################################################
 
@@ -294,22 +310,6 @@ bindsym $mod+p focus parent
 
 # focus the child container
 bindsym $mod+c focus child
-
-################################################################################
-# Window options
-################################################################################
-
-#for_window [class="TelegramDesktop"] floating enable
-#for_window [class="TelegramDesktop" title="Media viewer"] fullscreen enable
-#for_window [class="Nautilus"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [class="Arandr"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="feh"] floating enable
-for_window [class="mpv"] floating enable
-for_window [class="vlc"] floating enable
-for_window [class="app.py"] floating enable
-for_window [class="matplotlib"] floating enable
 
 ################################################################################
 # Resize mode
