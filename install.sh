@@ -10,5 +10,6 @@ ln -snf ~/AdoreIt/LinuxSetup/.Xresources ~/.Xresources
 cp -rsPf ~/AdoreIt/LinuxSetup/.config ~
 cp -rsPf ~/AdoreIt/LinuxSetup/.moc ~
 cp -rsPf ~/AdoreIt/LinuxSetup/.scripts ~
+cp -rsPf ~/AdoreIt/LinuxSetup/.urxvt ~
 
 mkdir -p ~/.vim/tmpdirs/undodir
