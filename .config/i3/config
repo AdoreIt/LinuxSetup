@@ -9,9 +9,10 @@ set $alt Mod1
 # commands
 set $shutdown shutdown -h now
 set $reboot reboot
-set $suspend ~/.config/i3/betterlockscreen/betterlockscreen -s blur
+# set $suspend ~/.config/i3/betterlockscreen/betterlockscreen -s blur
 #set $netrefresh sudo systemctl restart NetworkManager
-set $lock ~/.config/i3/betterlockscreen/betterlockscreen -l blur
+# set $lock ~/.config/i3/betterlockscreen/betterlockscreen -l blur
+set $lock ~/.config/i3/i3lock-fancy/i3lock-fancy --pixelate
 set $terminal urxvt
 set $volume-up amixer -q -D pulse sset Master 5%+ unmute
 set $volume-down amixer -q -D pulse sset Master 5%- unmute
@@ -56,7 +57,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id unclutter
 
 # wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wall.jpeg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wall.jpg
 
 # keyboard layouts
 exec --no-startup-id setxkbmap -layout \\"us,ru,ua\\" -option 'grp:alt_shift_toggle'

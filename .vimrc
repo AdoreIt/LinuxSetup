@@ -1,7 +1,5 @@
 set nocompatible
 
-
-
 " plug {{{
 " ==============================================================================
 
@@ -60,6 +58,8 @@ Plug 'vim-syntastic/syntastic', { 'for': 'python' }
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-latex/vim-latex'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
 call plug#end()
 
 " }}}
@@ -154,7 +154,7 @@ nnoremap <S-CR> O<Esc>
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <silent> <leader>e :tabnew ~/.dotfiles/.vimrc<CR>
+nnoremap <silent> <leader>e :tabnew ~/AdoreIt/LinuxSetup/.vimrc<CR>
 nnoremap <silent> <leader>t :tabnew<CR>
 
 nnoremap <leader>y "+y
