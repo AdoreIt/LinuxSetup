@@ -36,6 +36,23 @@ if [ "$TERM" = "st-256color" ] ; then
     export TERM=xterm-256color
 fi
 
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/natalie/Software/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/natalie/Software/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/natalie/Software/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/natalie/Software/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+
 ###############################################################################
 # Aliases
 ################################################################################
@@ -139,10 +156,17 @@ function set_bash_prompt() {
 # Set prompt and terminal title
 PROMPT_COMMAND='set_bash_prompt ; echo -ne "\033]0;${PWD/#$HOME/\~} - Terminal\a"'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+# repo setup to .bin
+PATH=~/.bin:$PATH
 
-# enable programmable completion features (you don't need to enable
+# QT
+export CMAKE_PREFIX_PATH="/home/natalie/Software/Qt/5.12.0/gcc_64/lib/cmake"
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height 60% --layout=reverse'
+
+# ENABLE programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
