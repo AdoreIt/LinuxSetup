@@ -138,10 +138,12 @@ function set_prompt_symbol() {
 }
 
 function set_virtualenv() {
-    if [ -z "$VIRTUAL_ENV" ] ; then
-        PYTHON_VIRTUALENV=""
-    else
+    if ! [ -z "$VIRTUAL_ENV" ] ; then
         PYTHON_VIRTUALENV="${LIGHT_MAGENTA}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+    elif ! [ -z "$CONDA_PROMPT_MODIFIER" ] ; then
+        PYTHON_VIRTUALENV="${LIGHT_MAGENTA}`basename \"$CONDA_PROMPT_MODIFIER\"`${COLOR_NONE}"
+    else
+        PYTHON_VIRTUALENV=""
     fi
 }
 
