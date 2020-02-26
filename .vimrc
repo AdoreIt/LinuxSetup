@@ -20,7 +20,9 @@ Plug 'honza/vim-snippets'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'tomasiser/vim-code-dark'
+Plug 'tomasiser/vim-code-dark', { 'for': 'python' }
+Plug 'altercation/vim-colors-solarized'
+Plug 'sonph/onehalf'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -196,8 +198,12 @@ nnoremap <silent> <leader>l :!docker run --rm -it -v $(pwd):/var/texlive babbage
 set background=dark
 
 try
+  " let g:solarized_termcolors=256
   let g:dracula_italic = 1
   colorscheme codedark
+  " colorscheme solarized
+  " set t_Co=256
+  " colorscheme onehalfdark
 catch
 endtry
 
@@ -337,6 +343,8 @@ endfunction
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+let g:cpp_no_function_highlight = 1
+let g:cpp_concepts_highlight = 1
 
 " }}}
 " markdown-preview {{{
@@ -435,5 +443,6 @@ let g:mkdp_page_title = '「${name}」'
 let g:syntastic_python_checkers = ['flake8']
 
 autocmd FileType python nnoremap <leader>s :0,$!yapf<Cr>
+autocmd FileType cpp setlocal commentstring=//\ %s
 
 " vim:foldmethod=marker:foldlevel=0

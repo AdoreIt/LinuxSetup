@@ -147,12 +147,21 @@ function set_virtualenv() {
     fi
 }
 
+function set_docker() {
+    if [ -e "/.dockerenv" ] ; then
+        DOCKER="${LIGHT_MAGENTA}[docker]${COLOR_NONE} "
+    else
+        DOCKER=""
+    fi
+}
+
 # Set the full bash prompt.
 function set_bash_prompt() {
     set_prompt_symbol $?
     set_virtualenv
+    set_docker
     set_git_branch
-    PS1="${PYTHON_VIRTUALENV}${LIGHT_GREEN}\u@\h${COLOR_NONE}:${LIGHT_BLUE}\W${COLOR_NONE}${BRANCH}${PROMPT_SYMBOL} "
+    PS1="${DOCKER}${PYTHON_VIRTUALENV}${LIGHT_GREEN}\u@\h${COLOR_NONE}:${LIGHT_BLUE}\W${COLOR_NONE}${BRANCH}${PROMPT_SYMBOL} "
 }
 
 # Set prompt and terminal title
@@ -168,7 +177,7 @@ export CMAKE_PREFIX_PATH="/home/natalie/Software/Qt/5.12.0/gcc_64/lib/cmake"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse'
 
-# ENABLE programmable completion features (you don't need to enable
+# enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
@@ -178,7 +187,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
-
-
