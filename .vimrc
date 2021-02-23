@@ -60,7 +60,9 @@ Plug 'vim-syntastic/syntastic', { 'for': 'python' }
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-latex/vim-latex'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -73,8 +75,19 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 " common {{{
 " ==============================================================================
 
+if has("termguicolors")
+  let &t_8f = "\e[38;2;%lu;%lu;%lum"
+  let &t_8b = "\e[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 let mapleader = ','
 let maplocalleader = ' '
+
+" Folds
+set foldmethod=syntax
+set foldlevel=20
+set nofoldenable
 
 set autoindent
 set autoread
@@ -200,7 +213,7 @@ set background=dark
 try
   " let g:solarized_termcolors=256
   let g:dracula_italic = 1
-  colorscheme codedark
+  colorscheme onedark
   " colorscheme solarized
   " set t_Co=256
   " colorscheme onehalfdark

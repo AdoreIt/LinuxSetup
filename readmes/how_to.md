@@ -35,3 +35,28 @@ sudo systemctl docker status
 # continue, for example:
 docker load image
 ```
+
+## Move docker to home
+
+```bash
+sudo service ocker stop
+
+sudo vim /etc/docker/daemon.json
+```
+
+Insert
+
+```text
+{
+   "graph": "/path/to/your/docker"
+}
+```
+
+```bash
+sudo rsync -aP /var/lib/docker/ ~/.docker
+
+sudo mv /var/lib/docker /var/lib/docker.old
+
+sudo service docker start
+sudo systemctl status docker
+```

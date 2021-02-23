@@ -52,7 +52,7 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
-
+export PYTHONPATH=$PYTHONPATH:/home/natalie/Apostera/NN/models-master/1.12/research:/home/natalie/Apostera/NN/models-master/1.12/research/slim
 ###############################################################################
 # Aliases
 ################################################################################
@@ -85,6 +85,10 @@ alias clip="xclip -selection clipboard"
 alias pacman="pacman --color=auto"
 alias yay="yay --color=auto"
 alias pacaur="pacaur --color=auto"
+
+alias cddmeb="cd ~/Apostera/BitBucket/arcreator/meb"
+alias cddppeaua="cd ~/Apostera/BitBucket/arcreator/ppeau"
+alias cddppepag="cd ~/Apostera/BitBucket/arcreator/ppepag"
 
 ################################################################################
 # Colors
@@ -155,6 +159,17 @@ function set_docker() {
     fi
 }
 
+dump() {
+  DUMP_DIR="$HOME/Apostera/files.apostera/"
+  local cmd="${FZF_CTRL_T_COMMAND:-"command find -L $DUMP_DIR -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
+    -o -type d -print \
+    -o -type l -print 2> /dev/null"}"
+  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-80%} --reverse $FZF_DEFAULT_OPTS $FZF_CTRL_T_OPTS" fzf -m "$@" | while read -r item; do
+    printf '%q ' "$item"
+  done
+  echo
+}
+
 # Set the full bash prompt.
 function set_bash_prompt() {
     set_prompt_symbol $?
@@ -171,11 +186,7 @@ PROMPT_COMMAND='set_bash_prompt ; echo -ne "\033]0;${PWD/#$HOME/\~} - Terminal\a
 PATH=~/.bin:$PATH
 
 # QT
-export CMAKE_PREFIX_PATH="/home/natalie/Software/Qt/5.12.0/gcc_64/lib/cmake"
-
-# fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS='--height 60% --layout=reverse'
+# export CMAKE_PREFIX_PATH="/home/natalie/Software/Qt/5.12.0/gcc_64/lib/cmake"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -187,3 +198,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height 60% --layout=reverse'

@@ -12,7 +12,8 @@ set $reboot reboot
 # set $suspend ~/.config/i3/betterlockscreen/betterlockscreen -s blur
 #set $netrefresh sudo systemctl restart NetworkManager
 # set $lock ~/.config/i3/betterlockscreen/betterlockscreen -l blur
-set $lock ~/.config/i3/i3lock-fancy/i3lock-fancy --pixelate
+# set $lock ~/.config/i3/i3lock-fancy/i3lock-fancy --pixelate
+set $lock i3lock -i ~/Pictures/wall.png -R 120 -l ffffff
 set $terminal urxvt
 set $volume-up amixer -q -D pulse sset Master 5%+ unmute
 set $volume-down amixer -q -D pulse sset Master 5%- unmute
@@ -60,7 +61,7 @@ exec --no-startup-id unclutter
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wall.jpg
 
 # keyboard layouts
-exec --no-startup-id setxkbmap -layout \\"us,ru,ua\\" -option 'grp:alt_shift_toggle'
+exec --no-startup-id setxkbmap -layout us,ru,ua -option 'grp:alt_shift_toggle'
 
 # lock screen automatically
 exec --no-startup-id xautolock -time 15 -locker "$lock"
@@ -192,10 +193,10 @@ bindsym $mod+o sticky toggle
 ################################################################################
 
 # workspaces
-set $ws0  "0:"
+set $ws0  "0:"
 set $ws1  "1:"
 set $ws2  "2:"
-set $ws3  "3:"
+set $ws3  "3:"
 set $ws4  "4:"
 set $ws5  "5:"
 set $ws6  "6:"
@@ -243,21 +244,21 @@ assign [class="Skype"] $ws10
 # Monitors
 ################################################################################
 
-set $monitor1 HDMI-0
-set $monitor2 DVI-D-0
+set $monitor2 HDMI-0
+set $monitor1 DVI-D-0
 set $monitor3 DP-1
 
-workspace $ws1 output $monitor1
-workspace $ws2 output $monitor1
+# workspace $ws1 output $monitor1
+# workspace $ws2 output $monitor1
 
-workspace $ws4 output $monitor2
-workspace $ws5 output $monitor2
-workspace $ws6 output $monitor2
-workspace $ws7 output $monitor2
+# workspace $ws4 output $monitor2
+# workspace $ws5 output $monitor2
+# workspace $ws6 output $monitor2
+# workspace $ws7 output $monitor2
 
-workspace $ws8 output $monitor3
-workspace $ws9 output $monitor3
-workspace $ws10 output $monitor3
+# workspace $ws8 output $monitor3
+# workspace $ws9 output $monitor3
+# workspace $ws10 output $monitor3
 
 ################################################################################
 # Window options
@@ -272,6 +273,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
+for_window [title="Bluetooth Devices"] floating enable
 for_window [class="app.py"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [title="AugmentedRealityView"] floating enable
@@ -414,9 +416,9 @@ bindsym XF86TouchpadOff exec --no-startup-id synclient TouchpadOff=1
 bindsym $mod+n  exec --no-startup-id toggletouchpad
 
 # media player controls
-bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
-bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
